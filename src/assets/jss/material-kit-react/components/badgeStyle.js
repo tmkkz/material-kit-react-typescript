@@ -5,6 +5,7 @@ import {
   successColor,
   infoColor,
   roseColor,
+  grayBackgroundColor,
 } from "assets/jss/material-kit-react.js";
 
 const badgeStyle = {
@@ -41,7 +42,7 @@ const badgeStyle = {
     backgroundColor: roseColor,
   },
   gray: {
-    backgroundColor: "#6c757d",
+    backgroundColor: grayBackgroundColor,
   },
 };
 

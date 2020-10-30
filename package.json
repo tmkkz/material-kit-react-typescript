@@ -3,6 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@material-ui/core": "^4.11.0",
+    "@material-ui/icons": "^4.9.1",
+    "@storybook/react": "^6.0.28",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -10,9 +13,18 @@
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.53",
     "@types/react-dom": "^16.9.8",
+    "classnames": "^2.2.6",
+    "history": "^5.0.0",
+    "moment": "^2.29.1",
+    "node-sass": "^4.14.1",
+    "nouislider": "^14.6.2",
     "react": "^17.0.1",
+    "react-datetime": "^3.0.4",
     "react-dom": "^17.0.1",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.0",
+    "react-slick": "^0.27.12",
+    "react-swipeable-views": "^0.13.9",
     "typescript": "^4.0.3",
     "web-vitals": "^0.2.4"
   },
@@ -21,7 +33,9 @@
     "build": "NODE_PATH=. react-scripts build",
     "test": "NODE_PATH=. react-scripts test",
     "eject": "NODE_PATH=. react-scripts eject",
-    "postinstall": "typesync || :"
+    "postinstall": "typesync || :",
+    "storybook": "start-storybook -p 6006 -s public --no-dll",
+    "build-storybook": "build-storybook -s public --no-dll"
   },
   "eslintConfig": {
     "extends": [
@@ -42,11 +56,26 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "^7.12.3",
+    "@storybook/addon-actions": "^6.0.28",
+    "@storybook/addon-essentials": "^6.0.28",
+    "@storybook/addon-links": "^6.0.28",
+    "@storybook/node-logger": "^6.0.28",
+    "@storybook/preset-create-react-app": "^3.1.4",
+    "@types/babel__core": "^7.1.11",
+    "@types/classnames": "^2.2.11",
     "@types/eslint-plugin-prettier": "^3.1.0",
+    "@types/node-sass": "^4.11.1",
+    "@types/nouislider": "^9.0.7",
     "@types/prettier": "^2.1.5",
+    "@types/react-is": "^16.7.1",
+    "@types/react-router-dom": "^5.1.6",
+    "@types/react-slick": "^0.23.4",
+    "@types/react-swipeable-views": "^0.13.0",
     "@types/testing-library__jest-dom": "^5.9.5",
     "@typescript-eslint/eslint-plugin": "4.0.1",
     "@typescript-eslint/parser": "4.0.1",
+    "babel-loader": "^8.1.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-prettier": "^6.15.0",
     "eslint-import-resolver-typescript": "^2.3.0",
@@ -56,6 +85,7 @@
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^4.2.0",
     "prettier": "^2.1.2",
+    "react-is": "^17.0.1",
     "typesync": "^0.8.0"
   }
 }
