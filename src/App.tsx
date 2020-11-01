@@ -1,4 +1,5 @@
 import React from "react";
+import Badge from "ui.components/Badge/Badge";
 import logo from "./logo.svg";
 import "./App.css";
 
@@ -19,6 +20,7 @@ const App: React.FC = () => {
           Learn React
         </a>
       </header>
+      <Badge color="primary">Primary</Badge>
     </div>
   );
 };

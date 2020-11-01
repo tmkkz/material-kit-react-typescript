@@ -24,4 +24,7 @@
   "include": [
     "src"
   ],
+  "exclude": [
+    "src/assets"
+  ]
 }

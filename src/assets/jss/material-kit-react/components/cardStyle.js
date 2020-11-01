@@ -1,4 +1,6 @@
-const cardStyle = {
+import { makeStyles } from "@material-ui/core/styles";
+
+const cardStyle = makeStyles({
   card: {
     border: "0",
     marginBottom: "30px",
@@ -24,6 +26,6 @@ const cardStyle = {
   cardCarousel: {
     overflow: "hidden",
   },
-};
+});
 
 export default cardStyle;
