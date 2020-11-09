@@ -1,4 +1,4 @@
-import "assets/scss/material-kit-react.scss";
+import "assets/css/material-kit-react.css";
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },

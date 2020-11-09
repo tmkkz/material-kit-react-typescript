@@ -1,4 +1,4 @@
-import { makeStyles } from "@material-ui/core/styles";
+import { createStyles } from "@material-ui/core/styles";
 import {
   primaryColor,
   warningColor,
@@ -10,14 +10,14 @@ import {
   grayBackgroundColor,
 } from "assets/jss/material-kit-react.js";
 
-const badgeStyle = makeStyles({
+const badgeStyle = createStyles({
   badge: {
     marginRight: "3px",
     borderRadius: "12px",
     padding: "5px 12px",
     textTransform: "uppercase",
     fontSize: "10px",
-    fontWeight: "500",
+    fontWeight: 500,
     lineHeight: "1",
     color: "#fff",
     textAlign: "center",
@@ -48,7 +48,7 @@ const badgeStyle = makeStyles({
   },
   grayBackGround: {
     backgroundColor: grayColor,
-  }
+  },
 });
 
 export default badgeStyle;

@@ -4,6 +4,6 @@ export type Colors =
   | "danger"
   | "success"
   | "info"
-  | "rose"
-  | "gray"
-  | "grayBackground";
+  | "rose";
+
+export type Size = "sm" | "lg";

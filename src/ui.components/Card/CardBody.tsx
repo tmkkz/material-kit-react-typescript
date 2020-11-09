@@ -1,8 +1,11 @@
 import React, { ReactNode } from "react";
+import { makeStyles } from "@material-ui/core/styles";
 // nodejs library that concatenates classes
 import classNames from "classnames";
 
-import cardBodyStyles from "assets/jss/material-kit-react/components/cardBodyStyle.js";
+import styles from "assets/jss/material-kit-react/components/cardBodyStyle.js";
+
+const useStyles = makeStyles(styles);
 
 export interface ICardBodyProps {
   className: string;
@@ -10,7 +13,7 @@ export interface ICardBodyProps {
 }
 
 const CardBody: React.FC<ICardBodyProps> = (props: ICardBodyProps) => {
-  const classes = cardBodyStyles();
+  const classes = useStyles();
   const { className, children, ...rest } = props;
   const cardBodyClasses = classNames({
     [classes.cardBody]: true,

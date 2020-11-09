@@ -1,6 +1,6 @@
-import { makeStyles } from "@material-ui/core/styles";
+import { createStyles } from "@material-ui/core/styles";
 
-const cardStyle = makeStyles({
+const cardStyle = createStyles({
   card: {
     border: "0",
     marginBottom: "30px",
