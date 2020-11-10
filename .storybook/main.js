@@ -8,8 +8,9 @@ module.exports = {
     ],
     'addons': [
       "@storybook/addon-links",
+      "@storybook/addon-docs",
       "@storybook/addon-essentials",
-      "@storybook/preset-create-react-app"
+      "@storybook/preset-create-react-app",
     ],
     webpackFinal: async (config, {configType}) => {
         // `configType` has a value of 'DEVELOPMENT' or 'PRODUCTION'

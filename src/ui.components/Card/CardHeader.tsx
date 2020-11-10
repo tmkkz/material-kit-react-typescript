@@ -3,21 +3,27 @@ import { makeStyles } from "@material-ui/core/styles";
 // nodejs library that concatenates classes
 import classNames from "classnames";
 
-import styles from "assets/jss/material-kit-react/components/cardHeaderStyle.js";
+import styles from "assets/jss/material-kit-react/components/cardHeaderStyle";
 
 type CardHeaderColor = "primary" | "warning" | "danger" | "success" | "info";
 const useStyles = makeStyles(styles);
 
 export interface ICardHeaderProps {
-  className: string;
-  color: CardHeaderColor;
-  plain: boolean;
+  className?: string;
+  color?: CardHeaderColor;
+  plain?: boolean;
   children: ReactNode;
 }
 
 const CardHeader: React.FC<ICardHeaderProps> = (props: ICardHeaderProps) => {
   const classes = useStyles();
-  const { className, children, color, plain, ...rest } = props;
+  const {
+    className = "",
+    children,
+    color = "primary",
+    plain = false,
+    ...rest
+  } = props;
 
   const cardHeaderClasses = classNames({
     [classes.cardHeader]: true,

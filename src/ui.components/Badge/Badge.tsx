@@ -3,10 +3,8 @@ import { makeStyles } from "@material-ui/core/styles";
 import styles from "assets/jss/material-kit-react/components/badgeStyle";
 import { Colors } from "types";
 
-// type BadgeBackGround = Colors & "gray" & "badge";
-
 export interface IBadgeProps {
-  color: Colors;
+  color?: Colors;
   children: ReactNode;
 }
 

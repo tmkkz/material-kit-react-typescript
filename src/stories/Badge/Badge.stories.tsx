@@ -8,9 +8,14 @@ import Badge, { IBadgeProps } from "ui.components/Badge/Badge";
 export default {
   title: "UI Kit React Material-UI/UI Components/Badge",
   component: Badge,
+  parameters: {
+    docs: {
+      description: {
+        component: "Badge component",
+      },
+    },
+  },
 } as Meta;
-
-type BadgeBackGround = Colors & "gray" & "badge";
 
 // eslint-disable-next-line react/jsx-props-no-spreading
 const Template: Story<IBadgeProps> = (args) => <Badge {...args} />;
@@ -18,48 +23,48 @@ const Template: Story<IBadgeProps> = (args) => <Badge {...args} />;
 export const Default = Template.bind({});
 
 Default.args = {
-  color: "gray" as BadgeBackGround,
+  color: "gray" as Colors,
   children: "default",
 };
 
 export const Primary = Template.bind({});
 
 Primary.args = {
-  color: "primary" as BadgeBackGround,
+  color: "primary" as Colors,
   children: "primary",
 };
 
 export const Warning = Template.bind({});
 
 Warning.args = {
-  color: "warning" as BadgeBackGround,
+  color: "warning" as Colors,
   children: "warning",
 };
 
 export const Danger = Template.bind({});
 
 Danger.args = {
-  color: "danger" as BadgeBackGround,
+  color: "danger" as Colors,
   children: "danger",
 };
 
 export const Success = Template.bind({});
 
 Success.args = {
-  color: "success" as BadgeBackGround,
+  color: "success" as Colors,
   children: "success",
 };
 
 export const Info = Template.bind({});
 
 Info.args = {
-  color: "info" as BadgeBackGround,
+  color: "info" as Colors,
   children: "info",
 };
 
 export const Rose = Template.bind({});
 
 Rose.args = {
-  color: "rose" as BadgeBackGround,
+  color: "rose" as Colors,
   children: "rose",
 };

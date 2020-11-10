@@ -4,20 +4,20 @@ import { makeStyles } from "@material-ui/core";
 import classNames from "classnames";
 
 // core components
-import styles from "assets/jss/material-kit-react/components/cardStyle.js";
+import styles from "assets/jss/material-kit-react/components/cardStyle";
 
 const useStyles = makeStyles(styles);
 
 export interface ICardProps {
-  className: string;
-  plain: boolean;
-  carousel: boolean;
+  className?: string;
+  plain?: boolean;
+  carousel?: boolean;
   children: ReactNode;
 }
 
 const Card: React.FC<ICardProps> = (props: ICardProps) => {
   const classes = useStyles();
-  const { className, children, plain, carousel, ...rest } = props;
+  const { className = "", children, plain, carousel, ...rest } = props;
   const cardClasses = classNames({
     [classes.card]: true,
     [classes.cardPlain]: plain,

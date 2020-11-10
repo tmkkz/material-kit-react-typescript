@@ -1,5 +1,6 @@
 /* eslint-disable react/prop-types */
 import React, { forwardRef, ReactNode } from "react";
+import { makeStyles } from "@material-ui/core/styles";
 // nodejs library that concatenates classes
 import classNames from "classnames";
 
@@ -8,9 +9,9 @@ import Button from "@material-ui/core/Button";
 
 // core components
 import { Colors, Size } from "types";
-import buttonStyle from "assets/jss/material-kit-react/components/buttonStyle.js";
+import styles from "assets/jss/material-kit-react/components/buttonStyle";
 
-type ButtonColor =
+export type ButtonColor =
   | Colors
   | "white"
   | "facebook"
@@ -19,18 +20,20 @@ type ButtonColor =
   | "github"
   | "transparent";
 
+const useStyles = makeStyles(styles);
+
 export interface IButtonProps {
-  color: ButtonColor;
-  size: Size;
-  simple: boolean;
-  round: boolean;
-  fullWidth: boolean;
-  disabled: boolean;
-  block: boolean;
-  link: boolean;
-  justIcon: boolean;
+  color?: ButtonColor;
+  size?: Size;
+  simple?: boolean;
+  round?: boolean;
+  fullWidth?: boolean;
+  disabled?: boolean;
+  block?: boolean;
+  link?: boolean;
+  justIcon?: boolean;
   children: ReactNode;
-  className: string;
+  className?: string;
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
@@ -39,25 +42,32 @@ type Ref = HTMLButtonElement;
 const RegularButton: React.FC<IButtonProps> = forwardRef<Ref, IButtonProps>(
   (props, ref) => {
     const {
-      color,
+      color = "default" as ButtonColor,
+      size,
       round,
       children,
       fullWidth,
       disabled,
       simple,
-      size,
       block,
       link,
       justIcon,
-      className,
+      className = "",
       ...rest
     } = props;
 
-    const classes = buttonStyle();
+    const classes = useStyles();
+
+    let buttonSize = false;
+    let sizeButton = "lg" as Size;
+    if (size) {
+      buttonSize = true;
+      sizeButton = size;
+    }
 
     const btnClasses = classNames({
       [classes.button]: true,
-      [classes[size]]: size,
+      [classes[sizeButton]]: buttonSize,
       [classes[color]]: color,
       [classes.round]: round,
       [classes.fullWidth]: fullWidth,

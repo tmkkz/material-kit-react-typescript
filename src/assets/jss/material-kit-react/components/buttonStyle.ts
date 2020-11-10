@@ -24,7 +24,6 @@ const buttonStyle = createStyles({
     margin: ".3125rem 1px",
     fontSize: "12px",
     fontWeight: 400,
-    textTransform: "uppercase",
     letterSpacing: "0",
     willChange: "box-shadow, transform",
     transition:
@@ -276,7 +275,7 @@ const buttonStyle = createStyles({
     width: "100% !important",
   },
   link: {
-    "&,&:hover,&:focus": {
+    "&:hover,&:focus": {
       backgroundColor: "transparent",
       color: "#999999",
       boxShadow: "none",
@@ -319,6 +318,7 @@ const buttonStyle = createStyles({
         height: "17px",
       },
     },
+    regular: {},
   },
 });
 
