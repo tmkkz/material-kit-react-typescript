@@ -8,7 +8,7 @@ import {
   roseColor,
   grayColor,
   grayBackgroundColor,
-} from "assets/jss/material-kit-react.js";
+} from "assets/jss/material-kit-react";
 
 const badgeStyle = createStyles({
   badge: {

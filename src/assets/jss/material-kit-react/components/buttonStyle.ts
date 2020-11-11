@@ -7,7 +7,7 @@ import {
   successColor,
   warningColor,
   dangerColor,
-} from "assets/jss/material-kit-react.js";
+} from "assets/jss/material-kit-react";
 
 const buttonStyle = createStyles({
   button: {

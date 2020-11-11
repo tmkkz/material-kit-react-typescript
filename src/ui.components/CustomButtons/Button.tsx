@@ -5,10 +5,10 @@ import { makeStyles } from "@material-ui/core/styles";
 import classNames from "classnames";
 
 // @material-ui/core components
-import Button from "@material-ui/core/Button";
+import Button, { ButtonProps } from "@material-ui/core/Button";
 
 // core components
-import { Colors, Size } from "types";
+import { Colors, Size, Extend } from "types";
 import styles from "assets/jss/material-kit-react/components/buttonStyle";
 
 export type ButtonColor =
@@ -22,7 +22,7 @@ export type ButtonColor =
 
 const useStyles = makeStyles(styles);
 
-export interface IButtonProps {
+interface IButtonProps {
   color?: ButtonColor;
   size?: Size;
   simple?: boolean;
@@ -34,57 +34,68 @@ export interface IButtonProps {
   justIcon?: boolean;
   children: ReactNode;
   className?: string;
+  target?: string;
+  rel?: string;
   onClick?: (event: React.MouseEvent<HTMLButtonElement>) => void;
 }
 
+export type CustomButtonProps = Extend<ButtonProps, IButtonProps>;
+
 type Ref = HTMLButtonElement;
 
-const RegularButton: React.FC<IButtonProps> = forwardRef<Ref, IButtonProps>(
-  (props, ref) => {
-    const {
-      color = "default" as ButtonColor,
-      size,
-      round,
-      children,
-      fullWidth,
-      disabled,
-      simple,
-      block,
-      link,
-      justIcon,
-      className = "",
-      ...rest
-    } = props;
+const RegularButton: React.FC<CustomButtonProps> = forwardRef<
+  Ref,
+  CustomButtonProps
+>((props, ref) => {
+  const {
+    color = "default" as ButtonColor,
+    size,
+    round,
+    children,
+    fullWidth,
+    disabled,
+    simple,
+    block,
+    link,
+    justIcon,
+    className = "",
+    href,
+    target,
+    rel,
+    ...rest
+  } = props;
 
-    const classes = useStyles();
+  const classes = useStyles();
 
-    let buttonSize = false;
-    let sizeButton = "lg" as Size;
-    if (size) {
-      buttonSize = true;
-      sizeButton = size;
-    }
-
-    const btnClasses = classNames({
-      [classes.button]: true,
-      [classes[sizeButton]]: buttonSize,
-      [classes[color]]: color,
-      [classes.round]: round,
-      [classes.fullWidth]: fullWidth,
-      [classes.disabled]: disabled,
-      [classes.simple]: simple,
-      [classes.block]: block,
-      [classes.link]: link,
-      [classes.justIcon]: justIcon,
-      [className]: className,
-    });
-    return (
-      // eslint-disable-next-line react/jsx-props-no-spreading
-      <Button {...rest} ref={ref} className={btnClasses}>
-        {children}
-      </Button>
-    );
+  let buttonSize = false;
+  let sizeButton = "lg" as Size;
+  if (size === "sm") {
+    buttonSize = true;
+    sizeButton = "sm";
   }
-);
+
+  const relValue = target === "_blank" ? "noopener noreferrer" : rel;
+  const linkValues = href ? { href, target, rel: relValue } : undefined;
+
+  const btnClasses = classNames({
+    [classes.button]: true,
+    [classes[sizeButton]]: buttonSize,
+    [classes[color]]: color,
+    [classes.round]: round,
+    [classes.fullWidth]: fullWidth,
+    [classes.disabled]: disabled,
+    [classes.simple]: simple,
+    [classes.block]: block,
+    [classes.link]: link,
+    [classes.justIcon]: justIcon,
+    [className]: className,
+  });
+  return (
+    // eslint-disable-next-line react/jsx-props-no-spreading
+    <Button {...linkValues} {...rest} ref={ref} className={btnClasses}>
+      {children}
+    </Button>
+  );
+});
 
 export default RegularButton;

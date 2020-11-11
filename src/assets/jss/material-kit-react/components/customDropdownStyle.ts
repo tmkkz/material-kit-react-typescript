@@ -16,7 +16,7 @@ import {
   dangerBoxShadow,
   roseColor,
   roseBoxShadow,
-} from "assets/jss/material-kit-react.js";
+} from "assets/jss/material-kit-react";
 
 // eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 const customDropdownStyle = makeStyles((theme: Theme) =>

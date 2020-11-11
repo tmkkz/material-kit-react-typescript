@@ -1,3 +1,5 @@
+import { createStyles } from "@material-ui/core/styles";
+
 import {
   primaryColor,
   warningColor,
@@ -6,9 +8,9 @@ import {
   infoColor,
   roseColor,
   grayColor,
-} from "assets/jss/material-kit-react.js";
+} from "assets/jss/material-kit-react";
 
-const customLinearProgressStyle = {
+const customLinearProgressStyle = createStyles({
   root: {
     height: "4px",
     marginBottom: "20px",
@@ -59,6 +61,6 @@ const customLinearProgressStyle = {
   grayBackground: {
     background: "rgba(221, 221, 221, 0.2)",
   },
-};
+});
 
 export default customLinearProgressStyle;

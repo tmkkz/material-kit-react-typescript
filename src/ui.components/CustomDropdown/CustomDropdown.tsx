@@ -22,20 +22,21 @@ import Button, { IButtonProps } from "ui.components/CustomButtons/Button";
 import customDropdownStyles from "assets/jss/material-kit-react/components/customDropdownStyle.js";
 
 type DropdownHoverColor = Colors & "black";
+type DropdownListItem = string | ReactNode | HTMLElement;
 
 export interface ICustomDropdownProps {
-  hoverColor: DropdownHoverColor;
-  buttonText: ReactNode;
-  buttonIcon: React.FC;
-  dropdownList: Array<string>;
-  buttonProps: IButtonProps;
-  dropup: boolean;
-  dropdownHeader: string;
-  rtlActive: boolean;
-  caret: boolean;
-  left: boolean;
-  noLiPadding: boolean;
-  onClick: (param: string) => void;
+  hoverColor?: DropdownHoverColor;
+  buttonText?: ReactNode;
+  buttonIcon?: React.FC;
+  dropdownList: Array<DropdownListItem>;
+  buttonProps?: IButtonProps;
+  dropup?: boolean;
+  dropdownHeader?: string;
+  rtlActive?: boolean;
+  caret?: boolean;
+  left?: boolean;
+  noLiPadding?: boolean;
+  onClick?: (param: DropdownListItem) => void;
 }
 
 const CustomDropdown: React.FC<ICustomDropdownProps> = (
@@ -51,7 +52,7 @@ const CustomDropdown: React.FC<ICustomDropdownProps> = (
     }
   };
 
-  const handleClose = (param: string) => {
+  const handleClose = (param: DropdownListItem) => {
     setAnchorEl(null);
     if (props && props.onClick) {
       props.onClick(param);

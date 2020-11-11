@@ -4,13 +4,13 @@ import { makeStyles } from "@material-ui/core/styles";
 import classNames from "classnames";
 
 import styles from "assets/jss/material-kit-react/components/cardHeaderStyle";
+import { Colors } from "types";
 
-type CardHeaderColor = "primary" | "warning" | "danger" | "success" | "info";
 const useStyles = makeStyles(styles);
 
 export interface ICardHeaderProps {
   className?: string;
-  color?: CardHeaderColor;
+  color?: Colors;
   plain?: boolean;
   children: ReactNode;
 }
