@@ -1,3 +1,5 @@
+import { createStyles } from "@material-ui/core/styles";
+
 import {
   grayColor,
   primaryColor,
@@ -5,9 +7,10 @@ import {
   successColor,
   warningColor,
   dangerColor,
-} from "assets/jss/material-kit-react.js";
+  roseColor,
+} from "assets/jss/material-kit-react";
 
-const paginationStyle = {
+const paginationStyle = createStyles({
   pagination: {
     display: "inline-block",
     paddingLeft: "0",
@@ -31,7 +34,7 @@ const paginationStyle = {
     height: "30px",
     minHeight: "auto",
     lineHeight: "30px",
-    fontWeight: "400",
+    fontWeight: 400,
     fontSize: "12px",
     textTransform: "uppercase",
     background: "transparent",
@@ -116,6 +119,19 @@ const paginationStyle = {
       cursor: "default",
     },
   },
+  rose: {
+    "&,&:hover,&:focus": {
+      backgroundColor: roseColor,
+      borderColor: roseColor,
+      color: "#FFFFFF",
+      boxShadow:
+        "0 4px 5px 0 rgba(244, 67, 54, 0.14), 0 1px 10px 0 rgba(244, 67, 54, 0.12), 0 2px 4px -1px rgba(244, 67, 54, 0.2)",
+    },
+    "&:hover,&:focus": {
+      zIndex: "2",
+      cursor: "default",
+    },
+  },
   disabled: {
     "&,&:hover,&:focus": {
       color: "#777",
@@ -124,6 +140,6 @@ const paginationStyle = {
       borderColor: "#ddd",
     },
   },
-};
+});
 
 export default paginationStyle;

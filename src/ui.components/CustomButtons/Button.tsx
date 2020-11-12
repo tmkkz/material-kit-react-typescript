@@ -22,7 +22,7 @@ export type ButtonColor =
 
 const useStyles = makeStyles(styles);
 
-interface IButtonProps {
+export interface IButtonProps {
   color?: ButtonColor;
   size?: Size;
   simple?: boolean;

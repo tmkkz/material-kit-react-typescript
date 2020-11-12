@@ -1,3 +1,4 @@
+import { createStyles } from "@material-ui/core/styles";
 import {
   primaryColor,
   warningColor,
@@ -7,9 +8,9 @@ import {
   roseColor,
   grayColor,
   title,
-} from "assets/jss/material-kit-react.js";
+} from "assets/jss/material-kit-react";
 
-const infoStyle = {
+const infoStyle = createStyles({
   infoArea: {
     maxWidth: "360px",
     margin: "0 auto",
@@ -49,7 +50,9 @@ const infoStyle = {
     color: grayColor,
     overflow: "hidden",
   },
-  title,
+  title: {
+    ...title,
+  },
   description: {
     color: grayColor,
     overflow: "hidden",
@@ -63,6 +66,6 @@ const infoStyle = {
     width: "61px",
     height: "61px",
   },
-};
+});
 
 export default infoStyle;

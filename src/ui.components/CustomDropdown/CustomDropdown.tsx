@@ -14,6 +14,7 @@ import Grow from "@material-ui/core/Grow";
 import Divider from "@material-ui/core/Divider";
 import Icon from "@material-ui/core/Icon";
 import Popper from "@material-ui/core/Popper";
+import { SvgIconProps } from "@material-ui/core/SvgIcon";
 
 import { Colors } from "types";
 // core components
@@ -27,7 +28,7 @@ type DropdownListItem = string | ReactNode | HTMLElement;
 export interface ICustomDropdownProps {
   hoverColor?: DropdownHoverColor;
   buttonText?: ReactNode;
-  buttonIcon?: React.FC;
+  buttonIcon?: React.ComponentType<SvgIconProps>;
   dropdownList: Array<DropdownListItem>;
   buttonProps?: IButtonProps;
   dropup?: boolean;
@@ -112,7 +113,7 @@ const CustomDropdown: React.FC<ICustomDropdownProps> = (
       <div>
         <Button
           aria-label="Notifications"
-          aria-owns={anchorEl ? "menu-list" : null}
+          aria-owns={anchorEl ? "menu-list" : undefined}
           aria-haspopup="true"
           // eslint-disable-next-line react/jsx-props-no-spreading
           {...buttonProps}

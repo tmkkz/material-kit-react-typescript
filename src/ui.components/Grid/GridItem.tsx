@@ -16,7 +16,7 @@ const styles = createStyles({
 
 export interface IGridItemProps {
   children: ReactNode;
-  className: string;
+  className?: string;
 }
 const useStyles = makeStyles(styles);
 

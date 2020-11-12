@@ -1,3 +1,5 @@
+import { createStyles } from "@material-ui/core/styles";
+
 import {
   defaultFont,
   primaryBoxShadow,
@@ -6,9 +8,9 @@ import {
   warningBoxShadow,
   dangerBoxShadow,
   container,
-} from "assets/jss/material-kit-react.js";
+} from "assets/jss/material-kit-react";
 
-const snackbarContentStyle = {
+const snackbarContentStyle = createStyles({
   root: {
     ...defaultFont,
     position: "relative",
@@ -66,7 +68,7 @@ const snackbarContentStyle = {
     height: "24px",
     float: "right",
     fontSize: "1.5rem",
-    fontWeight: "500",
+    fontWeight: 500,
     lineHeight: "1",
     position: "absolute",
     right: "-4px",
@@ -82,6 +84,6 @@ const snackbarContentStyle = {
     ...container,
     position: "relative",
   },
-};
+});
 
 export default snackbarContentStyle;

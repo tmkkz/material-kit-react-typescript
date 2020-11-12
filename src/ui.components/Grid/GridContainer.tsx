@@ -14,7 +14,7 @@ const styles = {
 
 export interface IGridContainerProps {
   children: ReactNode;
-  className: string;
+  className?: string;
 }
 
 const useStyles = makeStyles(styles);

@@ -1,3 +1,5 @@
+import { createStyles } from "@material-ui/core/styles";
+
 import {
   defaultFont,
   primaryColor,
@@ -5,9 +7,9 @@ import {
   successColor,
   warningColor,
   dangerColor,
-} from "assets/jss/material-kit-react.js";
+} from "assets/jss/material-kit-react";
 
-const typographyStyle = {
+const typographyStyle = createStyles({
   defaultFontStyle: {
     ...defaultFont,
     fontSize: "14px",
@@ -52,10 +54,10 @@ const typographyStyle = {
   },
   smallText: {
     fontSize: "65%",
-    fontWeight: "400",
+    fontWeight: 400,
     lineHeight: "1",
     color: "#777",
   },
-};
+});
 
 export default typographyStyle;

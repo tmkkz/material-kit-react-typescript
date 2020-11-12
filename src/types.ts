@@ -1,3 +1,5 @@
+import { ReactNode } from "react";
+
 /**
  * Constructs a union type, but if same name properties exist, properties selected from type P.
  */
@@ -12,3 +14,5 @@ export type Colors =
   | "rose";
 
 export type Size = "sm" | "lg";
+
+export type TypographyProps = { children: ReactNode };
