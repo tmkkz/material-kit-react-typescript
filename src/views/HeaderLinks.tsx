@@ -14,7 +14,7 @@ import { Apps, CloudDownload } from "@material-ui/icons";
 import CustomDropdown from "ui.components/CustomDropdown/CustomDropdown";
 import Button from "ui.components/CustomButtons/Button";
 
-import useStyles from "assets/jss/material-kit-react/components/headerLinksStyle";
+import useStyles from "assets/jss/material-kit-react/views/headerLinksStyle";
 
 const HeaderLinks: React.FC = () => {
   const classes = useStyles();

@@ -16,13 +16,19 @@ import Icon from "@material-ui/core/Icon";
 import Popper from "@material-ui/core/Popper";
 import { SvgIconProps } from "@material-ui/core/SvgIcon";
 
-import { Colors } from "types";
 // core components
 import Button, { IButtonProps } from "ui.components/CustomButtons/Button";
 
-import customDropdownStyles from "assets/jss/material-kit-react/components/customDropdownStyle.js";
+import customDropdownStyles from "assets/jss/material-kit-react/components/customDropdownStyle";
 
-type DropdownHoverColor = Colors & "black";
+export type DropdownHoverColor =
+  | "primary"
+  | "info"
+  | "success"
+  | "warning"
+  | "danger"
+  | "rose"
+  | "black";
 type DropdownListItem = string | ReactNode | HTMLElement;
 
 export interface ICustomDropdownProps {
@@ -75,7 +81,7 @@ const CustomDropdown: React.FC<ICustomDropdownProps> = (
     dropup,
     dropdownHeader,
     caret,
-    hoverColor,
+    hoverColor = "br",
     left,
     rtlActive,
     noLiPadding,
