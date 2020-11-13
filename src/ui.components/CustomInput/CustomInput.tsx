@@ -90,6 +90,6 @@ const CustomInput: React.FC<ICustomInputProps> = (props: ICustomInputProps) => {
       />
     </FormControl>
   );
-}
+};
 
 export default CustomInput;

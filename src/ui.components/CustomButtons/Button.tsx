@@ -32,7 +32,7 @@ export interface IButtonProps {
   block?: boolean;
   link?: boolean;
   justIcon?: boolean;
-  children: ReactNode;
+  children?: ReactNode;
   className?: string;
   target?: string;
   rel?: string;
