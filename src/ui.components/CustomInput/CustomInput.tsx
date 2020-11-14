@@ -8,7 +8,7 @@ import FormControl, { FormControlProps } from "@material-ui/core/FormControl";
 import InputLabel, { InputLabelProps } from "@material-ui/core/InputLabel";
 import Input, { InputProps } from "@material-ui/core/Input";
 
-import styles from "assets/jss/material-kit-react/components/customInputStyle.js";
+import styles from "assets/jss/material-kit-react/components/customInputStyle";
 
 export interface ICustomInputProps {
   labelText?: ReactNode;

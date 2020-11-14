@@ -2,16 +2,30 @@ import React from "react";
 
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
-import LinearProgress from "@material-ui/core/LinearProgress";
+import LinearProgress, {
+  LinearProgressProps,
+} from "@material-ui/core/LinearProgress";
 // core components
 import styles from "assets/jss/material-kit-react/components/customLinearProgressStyle";
-import { Colors } from "types";
+import { Extend } from "types";
 
-type ColorsPlusGray = Colors & "gray";
+type ColorsPlusGray =
+  | "primary"
+  | "warning"
+  | "danger"
+  | "success"
+  | "info"
+  | "rose"
+  | "gray";
 
-export interface ICustomLinerProgressProps {
+type CustomLinearProgressProps = {
   color: ColorsPlusGray;
-}
+};
+
+export type ICustomLinerProgressProps = Extend<
+  LinearProgressProps,
+  CustomLinearProgressProps
+>;
 const useStyles = makeStyles(styles);
 
 const CustomLinearProgress: React.FC<ICustomLinerProgressProps> = (
