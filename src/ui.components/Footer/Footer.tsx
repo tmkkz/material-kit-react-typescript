@@ -25,7 +25,7 @@ export interface IFooterProps {
   copyRightUrl: string;
   copyRightAnchorText: string;
   copy?: string;
-  icon: React.ComponentType<SvgIconProps>;
+  icon?: React.ComponentType<SvgIconProps>;
 }
 
 const useStyles = makeStyles(styles);
@@ -44,12 +44,18 @@ const Footer: React.FC<IFooterProps> = (props: IFooterProps) => {
     [classes.footerWhiteFont]: whiteFont
   });
 
+  let iconElement = null;
+  if (props.icon !== undefined) {
+    iconElement = <props.icon className={classes.icon} />;
+  }
+
   return (
     <footer className={footerClasses}>
       <div className={classes.container}>
         <div className={classes.left}>
           <List className={classes.list}>
             {links && links.map((link) => {
+              return (
               <ListItem className={classes.inlineBlock}>
                 <a
                   href={link.href}
@@ -59,12 +65,14 @@ const Footer: React.FC<IFooterProps> = (props: IFooterProps) => {
                   {link.anchorText}
                 </a>
               </ListItem>
+              )
             })}
           </List>
         </div>
         <div className={classes.right}>
           &copy; {new Date().getFullYear()} , made with{" "}
-          <props.icon className={classes.icon} /> by{" "}
+          {iconElement}
+           by{" "}
           <a
             href={copyRightUrl}
             className={aClasses}

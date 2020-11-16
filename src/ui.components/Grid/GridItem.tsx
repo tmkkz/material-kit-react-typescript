@@ -1,7 +1,8 @@
-import React, { ReactNode } from "react";
+import React from "react";
 // @material-ui/core components
 import { makeStyles, createStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
+import { CustomGridProps } from "ui.components/Grid/GridContainer";
 
 const styles = createStyles({
   grid: {
@@ -14,13 +15,9 @@ const styles = createStyles({
   },
 });
 
-export interface IGridItemProps {
-  children: ReactNode;
-  className?: string;
-}
 const useStyles = makeStyles(styles);
 
-const GridItem: React.FC<IGridItemProps> = (props: IGridItemProps) => {
+const GridItem: React.FC<CustomGridProps> = (props: CustomGridProps) => {
   const classes = useStyles();
   const { children, className, ...rest } = props;
   return (

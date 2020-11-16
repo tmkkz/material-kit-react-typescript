@@ -2,7 +2,8 @@ import React, { ReactNode } from "react";
 
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
-import Grid from "@material-ui/core/Grid";
+import Grid, { GridProps } from "@material-ui/core/Grid";
+import { Extend } from "types";
 
 const styles = {
   grid: {
@@ -12,16 +13,16 @@ const styles = {
   },
 };
 
-export interface IGridContainerProps {
+type GridContainerProps = {
   children: ReactNode;
   className?: string;
-}
+};
+
+export type CustomGridProps = Extend<GridProps, GridContainerProps>;
 
 const useStyles = makeStyles(styles);
 
-const GridContainer: React.FC<IGridContainerProps> = (
-  props: IGridContainerProps
-) => {
+const GridContainer: React.FC<CustomGridProps> = (props: CustomGridProps) => {
   const classes = useStyles();
   const { children, className = "", ...rest } = props;
   return (
