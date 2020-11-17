@@ -34,7 +34,7 @@ type DropdownListItem = string | ReactNode | HTMLElement;
 export interface ICustomDropdownProps {
   hoverColor?: DropdownHoverColor;
   buttonText?: ReactNode;
-  buttonIcon?: React.ComponentType<SvgIconProps>;
+  buttonIcon?: React.ComponentType<SvgIconProps> | string;
   dropdownList: Array<DropdownListItem>;
   buttonProps?: IButtonProps;
   dropup?: boolean;

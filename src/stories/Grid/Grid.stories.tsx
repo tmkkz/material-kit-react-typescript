@@ -9,9 +9,11 @@ import GridItem from "ui.components/Grid/GridItem";
 
 const useStyles = makeStyles({
   paper: {
+    margin: "5px 0",
     padding: "4px",
     textAlign: "center",
-    backgroud: "#6c757d",
+    color: "#fff",
+    backgroundColor: "#6c757d",
   },
 });
 

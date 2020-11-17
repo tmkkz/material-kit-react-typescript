@@ -1,4 +1,6 @@
-const tooltipsStyle = {
+import { createStyles } from "@material-ui/core/styles";
+
+const tooltipsStyle = createStyles({
   tooltip: {
     padding: "10px 15px",
     minWidth: "130px",
@@ -24,6 +26,6 @@ const tooltipsStyle = {
     whiteSpace: "normal",
     lineBreak: "auto",
   },
-};
+});
 
 export default tooltipsStyle;

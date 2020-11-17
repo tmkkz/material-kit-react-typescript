@@ -1,7 +1,7 @@
-import { container, title } from "assets/jss/material-kit-react.js";
-import headerLinksStyle from "assets/jss/material-kit-react/views/headerLinksStyle";
+import { createStyles } from "@material-ui/core/styles";
+import { container, title } from "assets/jss/material-kit-react";
 
-const navbarsStyle = (theme) => ({
+const navbarsStyle = createStyles({
   section: {
     padding: "70px 0",
     paddingTop: "0",
@@ -15,7 +15,7 @@ const navbarsStyle = (theme) => ({
   },
   navbar: {
     marginBottom: "-20px",
-    zIndex: "100",
+    zIndex: 100,
     position: "relative",
     overflow: "hidden",
     "& header": {
@@ -40,7 +40,6 @@ const navbarsStyle = (theme) => ({
     height: "20px",
     color: "inherit",
   },
-  ...headerLinksStyle(theme),
   img: {
     width: "40px",
     height: "40px",
@@ -52,6 +51,8 @@ const navbarsStyle = (theme) => ({
     borderRadius: "50%",
     marginLeft: "5px",
   },
+  searchInput: {},
+  socialIconsButton: {},
 });
 
 export default navbarsStyle;

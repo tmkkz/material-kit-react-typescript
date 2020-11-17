@@ -9,29 +9,23 @@ import Tabs from "@material-ui/core/Tabs";
 import Tab from "@material-ui/core/Tab";
 import { SvgIconProps } from "@material-ui/core/SvgIcon";
 
-import { Colors } from "types";
+import { Colors, TabGridSize } from "types";
 // core components
 import GridContainer from "ui.components/Grid/GridContainer";
 import GridItem from "ui.components/Grid/GridItem";
 
-import useStyles from "assets/jss/material-kit-react/components/navPillsStyle.js";
+import useStyles from "assets/jss/material-kit-react/components/navPillsStyle";
 
 type NavPillsTabProps = {
   tabId: number;
   tabButton?: string;
-  tabIcon?: React.ComponentType<SvgIconProps>;
+  tabIcon?: React.ComponentType<SvgIconProps> | string;
   tabContent?: ReactNode;
 };
 
-type tabGridSize = {
-  xs: number;
-  sm: number;
-  md: number;
-};
-
 type HorizontalShape = {
-  tabsGrid: tabGridSize;
-  contentGrid: tabGridSize;
+  tabsGrid: TabGridSize;
+  contentGrid: TabGridSize;
 };
 
 export interface INavPillsProps {

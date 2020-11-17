@@ -6,7 +6,7 @@ import { Colors } from "types";
 import  from "ui.components/";
 
 export default {
-  title: "UI Kit React Material-UI/UI Components/Badge",
+  title: "UI Kit React Material-UI/UI Components/",
   component: ,
   parameters: {
     docs: {

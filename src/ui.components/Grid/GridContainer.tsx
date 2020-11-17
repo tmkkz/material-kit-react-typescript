@@ -3,7 +3,7 @@ import React, { ReactNode } from "react";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 import Grid, { GridProps } from "@material-ui/core/Grid";
-import { Extend } from "types";
+import { Extend, TabGridSize } from "types";
 
 const styles = {
   grid: {
@@ -16,6 +16,7 @@ const styles = {
 type GridContainerProps = {
   children: ReactNode;
   className?: string;
+  tabGridSize?: TabGridSize;
 };
 
 export type CustomGridProps = Extend<GridProps, GridContainerProps>;

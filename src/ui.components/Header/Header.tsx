@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
 import React, { ReactNode } from "react";
 // nodejs library that concatenates classes
 import classNames from "classnames";
@@ -14,10 +15,18 @@ import Drawer from "@material-ui/core/Drawer";
 import Menu from "@material-ui/icons/Menu";
 // core components
 import styles from "assets/jss/material-kit-react/components/headerStyle";
-import { Colors } from "types";
 
-type ColorsAddedHeader = "transparent" | "white" | "dark";
-type HeaderColors = Colors & ColorsAddedHeader;
+type HeaderColors =
+  | "primary"
+  | "warning"
+  | "danger"
+  | "success"
+  | "info"
+  | "rose"
+  | "transparent"
+  | "white"
+  | "dark";
+
 type ChangeColorOnScroll = {
   height: number;
   color: HeaderColors;
@@ -30,7 +39,7 @@ export interface IHeaderProps {
   brand?: string;
   fixed?: boolean;
   absolute?: boolean;
-  changeColorOnScroll: ChangeColorOnScroll;
+  changeColorOnScroll?: ChangeColorOnScroll;
 }
 
 const useStyles = makeStyles(styles);
@@ -43,20 +52,30 @@ const Header: React.FC<IHeaderProps> = (props: IHeaderProps) => {
     const { color = "white", changeColorOnScroll } = props;
     const windowsScrollTop = window.pageYOffset;
 
-    if (windowsScrollTop > changeColorOnScroll.height) {
+    let changeColorOnScrollHeight = 0;
+    let changeColorOnScrollColor = "white";
+
+    if (changeColorOnScroll) {
+      changeColorOnScrollHeight = changeColorOnScroll.height;
+      changeColorOnScrollColor = changeColorOnScroll.color;
+    }
+
+    if (windowsScrollTop > changeColorOnScrollHeight) {
       document.body
         .getElementsByTagName("header")[0]
         .classList.remove(classes[color]);
       document.body
         .getElementsByTagName("header")[0]
-        .classList.add(classes[changeColorOnScroll.color]);
+        // @ts-ignore
+        .classList.add(classes[changeColorOnScrollColor]);
     } else {
       document.body
         .getElementsByTagName("header")[0]
         .classList.add(classes[color]);
       document.body
         .getElementsByTagName("header")[0]
-        .classList.remove(classes[changeColorOnScroll.color]);
+        // @ts-ignore
+        .classList.remove(classes[changeColorOnScrollColor]);
     }
   };
 
