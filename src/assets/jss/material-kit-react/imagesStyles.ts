@@ -1,13 +1,15 @@
-const imagesStyles = {
+import { createStyles } from "@material-ui/core/styles";
+
+const imagesStyles = createStyles({
   imgFluid: {
     maxWidth: "100%",
     height: "auto",
   },
   imgRounded: {
-    borderRadius: "6px !important",
+    borderRadius: "6px",
   },
   imgRoundedCircle: {
-    borderRadius: "50% !important",
+    borderRadius: "50%",
   },
   imgRaised: {
     boxShadow:
@@ -33,12 +35,12 @@ const imagesStyles = {
   },
   imgCardOverlay: {
     position: "absolute",
-    top: "0",
-    right: "0",
-    bottom: "0",
-    left: "0",
+    top: "0px",
+    right: "0px",
+    bottom: "0px",
+    left: "0px",
     padding: "1.25rem",
   },
-};
+});
 
 export default imagesStyles;
