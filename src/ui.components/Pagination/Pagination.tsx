@@ -14,7 +14,7 @@ import { Colors, Extend } from "types";
 import styles from "assets/jss/material-kit-react/components/paginationStyle";
 
 type customPaginationProps = {
-  color: Colors;
+  color?: Colors;
   firstText?: string | React.ComponentType<SvgIconProps>;
   previousText?: string | React.ComponentType<SvgIconProps>;
   nextText?: string | React.ComponentType<SvgIconProps>;
